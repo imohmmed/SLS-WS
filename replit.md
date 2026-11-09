@@ -1,6 +1,6 @@
-# [Project name]
+# ورشة سلس
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+موقع عربي تعريفي وتفاعلي للتسجيل في ورشة صناعة المحتوى «سلس».
 
 ## Run & Operate
 
@@ -22,19 +22,24 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/worshat-salas/` — صفحة الورشة وتجربة التسجيل.
+- `artifacts/api-server/src/routes/registrations.ts` — استقبال التسجيلات وإرسالها إلى Google Sheets.
+- `lib/api-spec/openapi.yaml` — عقد واجهة التسجيل ومصدر توليد مخططات التحقق وعميل الواجهة.
+- `artifacts/worshat-salas/src/assets/salas-logo.png` — شعار الورشة المرفق.
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- تحفظ التسجيلات مباشرة في ملف Google Sheets «ورشة سلس»؛ لا تُخزّن نسخة ثانية في قاعدة بيانات التطبيق.
+- بيانات الورشة والأسئلة الحالية أولية وتحتاج مراجعة قبل النشر العام.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- صفحة عربية بالكامل تشرح ورشة صناعة المحتوى وتتيح إرسال تسجيل مباشر.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- واجهة بسيطة ومرتبة وجذابة بحركات ناعمة، مع ألوان مستوحاة من الشعار.
+- كل النصوص الظاهرة للمستخدم بالعربية فقط.
 
 ## Gotchas
 

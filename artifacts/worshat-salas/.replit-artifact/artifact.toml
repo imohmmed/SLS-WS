@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "ورشة سلس"
+description = "صفحة عربية تعريفية وتفاعلية للتسجيل في ورشة صناعة المحتوى سلس، بحركات انسيابية ونموذج تسجيل يرسل البيانات إلى Google Sheets."
+version = "1.0.0"
+id = "artifacts/worshat-salas"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18988
+
+[services.development]
+run = "pnpm --filter @workspace/worshat-salas run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/worshat-salas", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/worshat-salas/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18988"
+BASE_PATH = "/"

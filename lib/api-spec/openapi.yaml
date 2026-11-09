@@ -24,6 +24,28 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/HealthStatus"
+  /registrations:
+    post:
+      operationId: createWorkshopRegistration
+      tags: [registrations]
+      summary: Submit a registration for the Salas workshop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WorkshopRegistrationInput"
+      responses:
+        "201":
+          description: Registration added to the workshop sheet
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorkshopRegistrationReceipt"
+        "400":
+          description: Registration data is invalid
+        "502":
+          description: Registration could not be delivered to the sheet
 components:
   schemas:
     HealthStatus:
@@ -33,4 +55,40 @@ components:
           type: string
       required:
         - status
+    WorkshopRegistrationInput:
+      type: object
+      additionalProperties: false
+      required: [fullName, phone]
+      properties:
+        fullName:
+          type: string
+          minLength: 2
+          maxLength: 120
+        phone:
+          type: string
+          minLength: 7
+          maxLength: 30
+        email:
+          type: string
+          maxLength: 254
+        contentField:
+          type: string
+          maxLength: 120
+        experience:
+          type: string
+          maxLength: 120
+        goal:
+          type: string
+          maxLength: 500
+        notes:
+          type: string
+          maxLength: 1000
+    WorkshopRegistrationReceipt:
+      type: object
+      required: [success, message]
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
 
