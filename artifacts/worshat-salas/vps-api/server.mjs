@@ -133,39 +133,19 @@ function validateRegistration(value) {
   const allowedKeys = new Set(Object.keys(limits));
 
   if (Object.keys(value).some((key) => !allowedKeys.has(key))) return null;
-  if (typeof value.fullName !== "string" || typeof value.phone !== "string") {
-    return null;
-  }
-
-  const registration = {
-    fullName: value.fullName.trim(),
-    phone: value.phone.trim(),
-    email: "",
-    contentField: "",
-    experience: "",
-    goal: "",
-    notes: "",
-  };
-
-  if (registration.fullName.length < 2 || registration.fullName.length > 120) {
-    return null;
-  }
-  if (registration.phone.length < 7 || registration.phone.length > 30) {
-    return null;
-  }
+  const registration = {};
 
   for (const [key, maxLength] of Object.entries(limits)) {
-    if (key === "fullName" || key === "phone") continue;
     const field = value[key];
-    if (field === undefined) continue;
     if (typeof field !== "string" || field.length > maxLength) return null;
-    registration[key] = field.trim();
+    const trimmed = field.trim();
+    if (trimmed.length === 0) return null;
+    registration[key] = trimmed;
   }
 
-  if (
-    registration.email &&
-    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(registration.email)
-  ) {
+  if (registration.fullName.length < 2) return null;
+  if (registration.phone.length < 7) return null;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(registration.email)) {
     return null;
   }
 

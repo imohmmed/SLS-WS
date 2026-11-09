@@ -26,6 +26,7 @@ export const createWorkshopRegistrationBodyFullNameMax = 120;
 export const createWorkshopRegistrationBodyPhoneMin = 7;
 export const createWorkshopRegistrationBodyPhoneMax = 30;
 
+export const createWorkshopRegistrationBodyEmailMin = 3;
 export const createWorkshopRegistrationBodyEmailMax = 254;
 
 export const createWorkshopRegistrationBodyContentFieldMax = 120;
@@ -41,11 +42,11 @@ export const createWorkshopRegistrationBodyNotesMax = 1000;
 export const CreateWorkshopRegistrationBody = zod.object({
   "fullName": zod.string().min(createWorkshopRegistrationBodyFullNameMin).max(createWorkshopRegistrationBodyFullNameMax),
   "phone": zod.string().min(createWorkshopRegistrationBodyPhoneMin).max(createWorkshopRegistrationBodyPhoneMax),
-  "email": zod.string().max(createWorkshopRegistrationBodyEmailMax).optional(),
-  "contentField": zod.string().max(createWorkshopRegistrationBodyContentFieldMax).optional(),
-  "experience": zod.string().max(createWorkshopRegistrationBodyExperienceMax).optional(),
-  "goal": zod.string().max(createWorkshopRegistrationBodyGoalMax).optional(),
-  "notes": zod.string().max(createWorkshopRegistrationBodyNotesMax).optional()
+  "email": zod.string().email().min(createWorkshopRegistrationBodyEmailMin).max(createWorkshopRegistrationBodyEmailMax),
+  "contentField": zod.string().min(1).max(createWorkshopRegistrationBodyContentFieldMax),
+  "experience": zod.string().min(1).max(createWorkshopRegistrationBodyExperienceMax),
+  "goal": zod.string().min(1).max(createWorkshopRegistrationBodyGoalMax),
+  "notes": zod.string().min(1).max(createWorkshopRegistrationBodyNotesMax)
 })
 
 export const CreateWorkshopRegistrationResponse = zod.object({

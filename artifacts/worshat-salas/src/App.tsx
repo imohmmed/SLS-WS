@@ -42,16 +42,31 @@ function Home() {
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setMessage('');
+    const firstEmptyField = Object.entries(form).find(
+      ([, value]) => !value.trim(),
+    )?.[0];
+
+    if (firstEmptyField) {
+      event.currentTarget
+        .querySelector<HTMLInputElement | HTMLTextAreaElement>(
+          `[name="${firstEmptyField}"]`,
+        )
+        ?.focus();
+      setSubmitted(false);
+      setMessage('كل الحقول مطلوبة. اكتب إجابة لكل سؤال.');
+      return;
+    }
+
     registration.mutate(
       {
         data: {
           fullName: form.fullName.trim(),
           phone: form.phone.trim(),
-          ...(form.email.trim() ? { email: form.email.trim() } : {}),
-          ...(form.contentField.trim() ? { contentField: form.contentField.trim() } : {}),
-          ...(form.experience.trim() ? { experience: form.experience.trim() } : {}),
-          ...(form.goal.trim() ? { goal: form.goal.trim() } : {}),
-          ...(form.notes.trim() ? { notes: form.notes.trim() } : {}),
+          email: form.email.trim(),
+          contentField: form.contentField.trim(),
+          experience: form.experience.trim(),
+          goal: form.goal.trim(),
+          notes: form.notes.trim(),
         },
       },
       {
@@ -234,18 +249,18 @@ function Home() {
             <div className="registration-stamp"><img src={salasLogo} alt="" /><span>فكرتك تستحق<br />تنصوّر</span></div>
           </div>
           <form className="registration-form" onSubmit={submit}>
-            <div className="form-topline"><span>طلب اهتمام بالورشة</span><span>الاسم والجوال مطلوبان</span></div>
+            <div className="form-topline"><span>طلب اهتمام بالورشة</span><span>كل الحقول مطلوبة</span></div>
             <div className="form-notice"><Smartphone size={17} /><span>تذكير: امتلاك iPhone شرط أساسي. إرسال الطلب مو تأكيد حجز نهائي.</span></div>
             <div className="form-row">
-              <label>الاسم الكامل <b>*</b><input data-testid="input-full-name" required minLength={2} maxLength={120} autoComplete="name" value={form.fullName} onChange={(e) => update('fullName', e.target.value)} placeholder="كيف نناديك؟" /></label>
-              <label>رقم الجوال <b>*</b><input data-testid="input-phone" required minLength={7} maxLength={30} autoComplete="tel" type="tel" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="رقم للتواصل" /></label>
+              <label>الاسم الكامل <b aria-hidden="true">*</b><input data-testid="input-full-name" name="fullName" required minLength={2} maxLength={120} autoComplete="name" value={form.fullName} onChange={(e) => update('fullName', e.target.value)} placeholder="كيف نناديك؟" /></label>
+              <label>رقم الجوال <b aria-hidden="true">*</b><input data-testid="input-phone" name="phone" required minLength={7} maxLength={30} autoComplete="tel" type="tel" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="رقم للتواصل" /></label>
             </div>
-            <label>البريد الإلكتروني <span className="optional">اختياري</span><input data-testid="input-email" type="email" maxLength={254} autoComplete="email" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="بريدك الإلكتروني" dir="auto" /></label>
+            <label>البريد الإلكتروني <b aria-hidden="true">*</b><input data-testid="input-email" name="email" type="email" required maxLength={254} autoComplete="email" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="بريدك الإلكتروني" dir="auto" /></label>
             <div className="form-divider"><span>حتى نعرف شلون نساعدك</span><i /></div>
-            <label>شنو نوع المحتوى أو الفيديوهات اللي تريد تتعلمها؟ <span className="optional">اختياري</span><input data-testid="input-content-field" maxLength={120} value={form.contentField} onChange={(e) => update('contentField', e.target.value)} placeholder="مثال: محتوى لمشروعي، فيديوهات تعليمية..." /></label>
-            <label>هل سبق لك صورت أو منتجت فيديو؟ <span className="optional">اختياري</span><textarea data-testid="input-experience" maxLength={120} rows={2} value={form.experience} onChange={(e) => update('experience', e.target.value)} placeholder="احچيلنا باختصار عن تجربتك..." /></label>
-            <label>شنو هدفك من المشاركة؟ <span className="optional">اختياري</span><textarea data-testid="input-goal" maxLength={500} rows={2} value={form.goal} onChange={(e) => update('goal', e.target.value)} placeholder="شنو تحب تعرف أو تسوي بنهاية الورشة؟" /></label>
-            <label>عندك سؤال أو ملاحظة؟ <span className="optional">اختياري</span><textarea data-testid="input-notes" maxLength={1000} rows={2} value={form.notes} onChange={(e) => update('notes', e.target.value)} placeholder="اكتب أي سؤال تحب نجاوبك عليه..." /></label>
+            <label>شنو نوع المحتوى أو الفيديوهات اللي تريد تتعلمها؟ <b aria-hidden="true">*</b><input data-testid="input-content-field" name="contentField" required maxLength={120} value={form.contentField} onChange={(e) => update('contentField', e.target.value)} placeholder="مثال: محتوى لمشروعي، فيديوهات تعليمية..." /></label>
+            <label>هل سبق لك صورت أو منتجت فيديو؟ <b aria-hidden="true">*</b><textarea data-testid="input-experience" name="experience" required maxLength={120} rows={2} value={form.experience} onChange={(e) => update('experience', e.target.value)} placeholder="احچيلنا باختصار عن تجربتك..." /></label>
+            <label>شنو هدفك من المشاركة؟ <b aria-hidden="true">*</b><textarea data-testid="input-goal" name="goal" required maxLength={500} rows={2} value={form.goal} onChange={(e) => update('goal', e.target.value)} placeholder="شنو تحب تعرف أو تسوي بنهاية الورشة؟" /></label>
+            <label>عندك سؤال أو ملاحظة؟ <b aria-hidden="true">*</b><textarea data-testid="input-notes" name="notes" required maxLength={1000} rows={2} value={form.notes} onChange={(e) => update('notes', e.target.value)} placeholder="اكتب أي سؤال تحب نجاوبك عليه..." /></label>
             {message && <div className={`form-feedback ${submitted ? 'is-success' : 'is-error'}`} role="status" aria-live="polite">{submitted && <Check size={18} />}<span>{message}</span></div>}
             <button data-testid="button-submit" className="button button-submit" type="submit" disabled={registration.isPending}>
               {registration.isPending ? <><span className="pending-dot" /> جارٍ إرسال طلبك</> : submitted ? <>وصل طلبك <Check size={18} /></> : <>أرسل طلب الاهتمام <ArrowLeft size={18} /></>}

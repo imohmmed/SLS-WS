@@ -90,7 +90,7 @@ components:
     WorkshopRegistrationInput:
       type: object
       additionalProperties: false
-      required: [fullName, phone]
+      required: [fullName, phone, email, contentField, experience, goal, notes]
       properties:
         fullName:
           type: string
@@ -102,18 +102,24 @@ components:
           maxLength: 30
         email:
           type: string
+          minLength: 3
           maxLength: 254
+          format: email
         contentField:
           type: string
+          minLength: 1
           maxLength: 120
         experience:
           type: string
+          minLength: 1
           maxLength: 120
         goal:
           type: string
+          minLength: 1
           maxLength: 500
         notes:
           type: string
+          minLength: 1
           maxLength: 1000
     WorkshopRegistrationReceipt:
       type: object

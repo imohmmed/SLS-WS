@@ -24,16 +24,31 @@ export interface WorkshopRegistrationInput {
      * @maxLength 30
      */
   phone: string;
-  /** @maxLength 254 */
-  email?: string;
-  /** @maxLength 120 */
-  contentField?: string;
-  /** @maxLength 120 */
-  experience?: string;
-  /** @maxLength 500 */
-  goal?: string;
-  /** @maxLength 1000 */
-  notes?: string;
+  /**
+     * @minLength 3
+     * @maxLength 254
+     */
+  email: string;
+  /**
+     * @minLength 1
+     * @maxLength 120
+     */
+  contentField: string;
+  /**
+     * @minLength 1
+     * @maxLength 120
+     */
+  experience: string;
+  /**
+     * @minLength 1
+     * @maxLength 500
+     */
+  goal: string;
+  /**
+     * @minLength 1
+     * @maxLength 1000
+     */
+  notes: string;
 }
 
 export interface WorkshopRegistrationReceipt {

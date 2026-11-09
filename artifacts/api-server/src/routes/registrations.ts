@@ -20,6 +20,14 @@ router.post("/registrations", async (req, res): Promise<void> => {
 
   const { fullName, phone, email, contentField, experience, goal, notes } =
     parsed.data;
+  if (
+    [fullName, phone, email, contentField, experience, goal, notes].some(
+      (value) => !value.trim(),
+    )
+  ) {
+    res.status(400).json({ error: "يرجى تعبئة جميع الحقول." });
+    return;
+  }
 
   try {
     const response = await connectors.proxy(
@@ -37,11 +45,11 @@ router.post("/registrations", async (req, res): Promise<void> => {
               }).format(new Date()),
               fullName.trim(),
               phone.trim(),
-              email?.trim() ?? "",
-              contentField?.trim() ?? "",
-              experience?.trim() ?? "",
-              goal?.trim() ?? "",
-              notes?.trim() ?? "",
+              email.trim(),
+              contentField.trim(),
+              experience.trim(),
+              goal.trim(),
+              notes.trim(),
             ],
           ],
         },
