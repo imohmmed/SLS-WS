@@ -1,1 +1,2 @@
 - [Artifact validation context](artifact-validation-context.md) — managed preview variables are not automatically available to standalone shell build commands.
+- [Workshop Sheets deployment](workshop-sheets-deployment.md) — the user wants the workshop’s Google Sheets connection hosted on the VPS without a Replit runtime dependency.

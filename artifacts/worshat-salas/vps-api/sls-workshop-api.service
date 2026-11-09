@@ -1,0 +1,22 @@
+[Unit]
+Description=Salas Workshop Registration API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/sls-workshop-api
+EnvironmentFile=/etc/sls-workshop-api.env
+ExecStart=/usr/bin/node /opt/sls-workshop-api/server.mjs
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

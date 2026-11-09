@@ -64,9 +64,17 @@ function Home() {
             setMessage(receipt.message || 'لم نتمكن من إرسال طلبك. حاول مرة أخرى.');
           }
         },
-        onError: () => {
+        onError: (error) => {
           setSubmitted(false);
-          setMessage('تعذر إرسال الطلب الآن. تحقق من اتصالك وحاول مرة أخرى.');
+          const serverMessage =
+            error.data &&
+            'error' in error.data &&
+            typeof error.data.error === 'string'
+              ? error.data.error
+              : undefined;
+          setMessage(
+            serverMessage || 'تعذر إرسال الطلب الآن. تحقق من اتصالك وحاول مرة أخرى.',
+          );
         },
       },
     );
