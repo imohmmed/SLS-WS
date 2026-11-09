@@ -20,6 +20,7 @@ import type {
 } from '@tanstack/react-query';
 
 import type {
+  ApiError,
   HealthStatus,
   WorkshopRegistrationInput,
   WorkshopRegistrationReceipt
@@ -172,7 +173,7 @@ return customFetch<WorkshopRegistrationReceipt>(getCreateWorkshopRegistrationUrl
 
 export const getCreateWorkshopRegistrationMutationKey = () => ['createWorkshopRegistration'] as const;
 
-export const getCreateWorkshopRegistrationMutationOptions = <TError = ErrorType<void>,
+export const getCreateWorkshopRegistrationMutationOptions = <TError = ErrorType<ApiError>,
     TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createWorkshopRegistration>>, TError,CreateWorkshopRegistrationMutationVariables, TContext>, request?: SecondParameter<typeof customFetch>}
 ): UseMutationOptions<Awaited<ReturnType<typeof createWorkshopRegistration>>, TError,CreateWorkshopRegistrationMutationVariables, TContext> => {
 
@@ -201,13 +202,13 @@ const {mutation: mutationOptions, request: requestOptions} = options ?
 
     export type CreateWorkshopRegistrationMutationResult = NonNullable<Awaited<ReturnType<typeof createWorkshopRegistration>>>
     export type CreateWorkshopRegistrationMutationBody = BodyType<WorkshopRegistrationInput>
-    export type CreateWorkshopRegistrationMutationError = ErrorType<void>
+    export type CreateWorkshopRegistrationMutationError = ErrorType<ApiError>
     export type CreateWorkshopRegistrationMutationVariables = {data: BodyType<WorkshopRegistrationInput>}
 
     /**
  * @summary Submit a registration for the Salas workshop
  */
-export const useCreateWorkshopRegistration = <TError = ErrorType<void>,
+export const useCreateWorkshopRegistration = <TError = ErrorType<ApiError>,
     TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof createWorkshopRegistration>>, TError,CreateWorkshopRegistrationMutationVariables, TContext>, request?: SecondParameter<typeof customFetch>}
  ): UseMutationResult<
         Awaited<ReturnType<typeof createWorkshopRegistration>>,
