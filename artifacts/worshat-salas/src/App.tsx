@@ -75,21 +75,21 @@ function Home() {
   return (
     <div dir="rtl" className="salas-page">
       <header className="site-header">
-        <a href="#البداية" className="brand" aria-label="ورشة سلس، إلى البداية">
+        <a href="#home" className="brand" aria-label="ورشة سلس، إلى البداية">
           <img src={salasLogo} alt="" />
           <span>ورشة سلس</span>
         </a>
         <nav aria-label="التنقل الرئيسي">
-          <a href="#عن-الورشة">عن الورشة</a>
-          <a href="#المحاور">شنو راح تتعلم</a>
-          <a href="#البرنامج">برنامج الأيام</a>
-          <a href="#الأجور">الأجور</a>
+          <a href="#about">عن الورشة</a>
+          <a href="#skills">شنو راح تتعلم</a>
+          <a href="#program">برنامج الأيام</a>
+          <a href="#pricing">الأجور</a>
         </nav>
         <a className="header-cta" href="#register">سجّل اهتمامك <ArrowLeft size={16} /></a>
       </header>
 
       <main>
-        <section className="hero" id="البداية">
+        <section className="hero" id="home">
           <div className="hero-copy">
             <div className="eyebrow"><span className="eyebrow-dot" /> ورشة صناعة الفيديو والمحتوى الرقمي</div>
           <h1>فكرتك<br /><span>تصير فيديو.</span></h1>
@@ -115,20 +115,20 @@ function Home() {
           </div>
         </section>
 
-        <section className="intro-section" id="عن-الورشة">
+        <section className="intro-section" id="about">
           <div className="section-kicker"><span>٠١</span> تعلّم بالممارسة</div>
           <div className="intro-grid">
             <h2>مو بس تمسك موبايل.<br /><em>تسوي فيديو يحچي.</em></h2>
             <div className="intro-text">
               <p>صناعة الفيديو تبدأ من فكرة واضحة وقصة قصيرة وافتتاحية تشد المشاهد، وبعدها يجي التصوير والمونتاج والصوت المناسب.</p>
               <p>بورشة سلس راح تطبق هالخطوات بنفسك، وتتعلم شلون تحول فكرة بسيطة إلى محتوى قابل للنشر على TikTok وInstagram.</p>
-              <a href="#البرنامج" className="underlined-link">شوف برنامج الأيام <ArrowDown size={16} /></a>
+              <a href="#program" className="underlined-link">شوف برنامج الأيام <ArrowDown size={16} /></a>
             </div>
           </div>
           <div className="statement-strip"><span>تعلّم. صوّر. مونتج. انشر.</span><span className="strip-mark">خمسة أيام من التطبيق العملي</span></div>
         </section>
 
-        <section className="curriculum-section" id="المحاور">
+        <section className="curriculum-section" id="skills">
           <div className="curriculum-heading">
             <div>
               <div className="section-kicker"><span>٠٢</span> المهارات اللي راح تكتسبها</div>
@@ -161,7 +161,7 @@ function Home() {
           </div>
         </section>
 
-        <section className="program-section" id="البرنامج">
+        <section className="program-section" id="program">
           <div className="program-heading">
             <div>
               <div className="section-kicker"><span>٠٤</span> البرنامج التدريبي</div>
@@ -198,7 +198,7 @@ function Home() {
           </aside>
         </section>
 
-        <section className="pricing-section" id="الأجور">
+        <section className="pricing-section" id="pricing">
           <div className="pricing-copy">
             <div className="section-kicker"><span>٠٥</span> الأجور وطريقة الدفع</div>
             <h2>كل التفاصيل<br /><em>واضحة من البداية.</em></h2>
@@ -217,7 +217,7 @@ function Home() {
           </div>
         </section>
 
-        <section className="terms-section" id="الشروط">
+        <section className="terms-section" id="terms">
           <div className="terms-heading">
             <div className="section-kicker"><span>٠٦</span> شروط المشاركة</div>
             <h2>خلّينا نكون<br /><em>واضحين من البداية.</em></h2>
@@ -232,7 +232,7 @@ function Home() {
           </div>
         </section>
 
-        <section className="faq-section" id="الأسئلة">
+        <section className="faq-section" id="faq">
           <div className="faq-heading">
             <div className="section-kicker"><span>٠٧</span> قبل ما تسجل</div>
             <h2>أسئلة تتكرر.</h2>
@@ -278,7 +278,7 @@ function Home() {
       </main>
 
       <footer className="site-footer">
-        <a href="#البداية" className="footer-brand"><img src={salasLogo} alt="" /> ورشة سلس</a>
+        <a href="#home" className="footer-brand"><img src={salasLogo} alt="" /> ورشة سلس</a>
         <span>ورشة صناعة الفيديو والمحتوى الرقمي.</span>
         <div className="footer-socials" aria-label="حسابات ورشة سلس">
           <a className="footer-social" href="https://www.instagram.com/sls___brand" target="_blank" rel="noopener noreferrer" aria-label="حساب ورشة سلس على إنستغرام">
@@ -290,7 +290,7 @@ function Home() {
             <span>واتساب</span>
           </a>
         </div>
-        <a href="#البداية" className="back-top">العودة للأعلى <MoveUpLeft size={15} /></a>
+        <a href="#home" className="back-top">العودة للأعلى <MoveUpLeft size={15} /></a>
       </footer>
     </div>
   );
