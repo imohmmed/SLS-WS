@@ -2,7 +2,7 @@ import { type FormEvent, type ReactNode } from 'react';
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useCreateWorkshopRegistration } from '@workspace/api-client-react';
-import { ArrowDown, ArrowLeft, ArrowUpLeft, Check, CircleDot, Feather, Layers3, MessageCircle, MoveUpLeft, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowLeft, ArrowUpLeft, Check, CircleDot, Feather, Instagram, Layers3, MessageCircle, MoveUpLeft, Sparkles } from 'lucide-react';
 import salasLogo from '@/assets/salas-logo.png';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -172,7 +172,21 @@ function Home() {
         </form>
       </section>
 
-      <footer className="site-footer"><a href="#البداية" className="footer-brand"><img src={salasLogo} alt="" /> ورشة سلس</a><span>مساحة للمبدعين كي يجدوا صوتهم.</span><a href="#البداية" className="back-top">العودة للأعلى <MoveUpLeft size={15} /></a></footer>
+      <footer className="site-footer">
+        <a href="#البداية" className="footer-brand"><img src={salasLogo} alt="" /> ورشة سلس</a>
+        <span>مساحة للمبدعين كي يجدوا صوتهم.</span>
+        <div className="footer-socials" aria-label="حسابات ورشة سلس">
+          <a className="footer-social" href="https://www.instagram.com/sls___brand" target="_blank" rel="noopener noreferrer" aria-label="حساب ورشة سلس على إنستغرام">
+            <Instagram size={16} aria-hidden="true" />
+            <span>إنستغرام</span>
+          </a>
+          <a className="footer-social" href="https://wa.me/9647757660888" target="_blank" rel="noopener noreferrer" aria-label="تواصل مع ورشة سلس عبر واتساب">
+            <MessageCircle size={16} aria-hidden="true" />
+            <span>واتساب</span>
+          </a>
+        </div>
+        <a href="#البداية" className="back-top">العودة للأعلى <MoveUpLeft size={15} /></a>
+      </footer>
     </main>
   );
 }
