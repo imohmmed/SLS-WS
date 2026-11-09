@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useCreateWorkshopRegistration } from '@workspace/api-client-react';
 import { ArrowDown, ArrowLeft, Camera, Check, ChevronDown, Clock3, Instagram, MapPin, MessageCircle, MoveUpLeft, Smartphone, Sparkles } from 'lucide-react';
 import salasLogo from '@/assets/salas-logo.png';
-import { curriculum, participationTerms, programDays, workshopFaq } from './workshop-content';
+import { curriculum, programDays, workshopFaq } from './workshop-content';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -217,24 +217,9 @@ function Home() {
           </div>
         </section>
 
-        <section className="terms-section" id="terms">
-          <div className="terms-heading">
-            <div className="section-kicker"><span>٠٦</span> شروط المشاركة</div>
-            <h2>خلّينا نكون<br /><em>واضحين من البداية.</em></h2>
-          </div>
-          <div className="terms-grid">
-            {participationTerms.map((term, index) => (
-              <article className="term-card" key={term.title}>
-                <span>{toArabicDigits(index + 1).padStart(2, '٠')}</span>
-                <div><h3>{term.title}</h3><p>{term.description}</p></div>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section className="registration-section" id="register">
           <div className="registration-intro">
-            <div className="section-kicker light-kicker"><span>٠٧</span> ابدأ بطلب اهتمام</div>
+            <div className="section-kicker light-kicker"><span>٠٦</span> ابدأ بطلب اهتمام</div>
             <h2>خلّنا نعرف<br />شنو تريد تتعلم.</h2>
             <p>املأ النموذج حتى نتواصل وياك ونرسل تفاصيل الموعد والمكان وخطوات التأكيد.</p>
             <a className="registration-whatsapp" href="https://wa.me/9647757660888" target="_blank" rel="noopener noreferrer"><MessageCircle size={17} /> أو راسلنا مباشرة على واتساب</a>
@@ -263,7 +248,7 @@ function Home() {
 
         <section className="faq-section" id="faq">
           <div className="faq-heading">
-            <div className="section-kicker"><span>٠٨</span> قبل ما تسجل</div>
+            <div className="section-kicker"><span>٠٧</span> قبل ما تسجل</div>
             <h2>أسئلة تتكرر.</h2>
           </div>
           <div className="faq-list">
