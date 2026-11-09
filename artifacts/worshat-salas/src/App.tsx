@@ -232,24 +232,9 @@ function Home() {
           </div>
         </section>
 
-        <section className="faq-section" id="faq">
-          <div className="faq-heading">
-            <div className="section-kicker"><span>٠٧</span> قبل ما تسجل</div>
-            <h2>أسئلة تتكرر.</h2>
-          </div>
-          <div className="faq-list">
-            {workshopFaq.map((item) => (
-              <details className="faq-item" key={item.question}>
-                <summary>{item.question}<ChevronDown size={18} aria-hidden="true" /></summary>
-                <p>{item.answer}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-
         <section className="registration-section" id="register">
           <div className="registration-intro">
-            <div className="section-kicker light-kicker"><span>٠٨</span> ابدأ بطلب اهتمام</div>
+            <div className="section-kicker light-kicker"><span>٠٧</span> ابدأ بطلب اهتمام</div>
             <h2>خلّنا نعرف<br />شنو تريد تتعلم.</h2>
             <p>املأ النموذج حتى نتواصل وياك ونرسل تفاصيل الموعد والمكان وخطوات التأكيد.</p>
             <a className="registration-whatsapp" href="https://wa.me/9647757660888" target="_blank" rel="noopener noreferrer"><MessageCircle size={17} /> أو راسلنا مباشرة على واتساب</a>
@@ -274,6 +259,21 @@ function Home() {
             </button>
             <p className="form-privacy">نستخدم بياناتك للتواصل وياك بخصوص الورشة وترتيب التسجيل.</p>
           </form>
+        </section>
+
+        <section className="faq-section" id="faq">
+          <div className="faq-heading">
+            <div className="section-kicker"><span>٠٨</span> قبل ما تسجل</div>
+            <h2>أسئلة تتكرر.</h2>
+          </div>
+          <div className="faq-list">
+            {workshopFaq.map((item) => (
+              <details className="faq-item" key={item.question}>
+                <summary>{item.question}<ChevronDown size={18} aria-hidden="true" /></summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </div>
         </section>
       </main>
 
