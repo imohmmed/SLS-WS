@@ -1,0 +1,1 @@
+- [Artifact validation context](artifact-validation-context.md) — managed preview variables are not automatically available to standalone shell build commands.

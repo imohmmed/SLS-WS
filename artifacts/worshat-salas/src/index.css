@@ -507,7 +507,7 @@
 .program-intro { margin: .5rem 0 .7rem; color: #6f615e; line-height: 1.8; font-size: .88rem; }
 .program-place { display: flex; align-items: flex-start; gap: .45rem; color: var(--wine); font-size: .8rem; line-height: 1.7; margin: .6rem 0; }
 .program-place svg { flex: 0 0 auto; margin-top: .12rem; }
-.program-content ul { margin: .75rem 0 0; padding-right: 1.1rem; color: #645653; font-size: .84rem; line-height: 2; }
+.program-content ul { margin: .75rem 0 0; padding-right: 1.1rem; list-style: disc; color: #645653; font-size: .84rem; line-height: 2; }
 .program-content li { padding-right: .15rem; }
 .program-icon { color: #a47776; margin-top: .15rem; }
 .program-note { margin: 1.5rem 0 0; padding: 1rem 1.1rem; border: 1px solid #d7cbc2; border-radius: 14px; color: #685653; font-size: .8rem; line-height: 1.8; }

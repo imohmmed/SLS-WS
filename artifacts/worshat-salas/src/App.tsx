@@ -98,6 +98,7 @@ function Home() {
               <span><Clock3 size={16} /> خمسة أيام تدريب</span>
               <span><Camera size={16} /> تطبيق وتصوير فعلي</span>
               <span><Smartphone size={16} /> iPhone شرط أساسي</span>
+              <span>١٢٥٬٠٠٠ د.ع للورشة كاملة</span>
             </div>
             <div className="hero-actions">
               <a className="button button-light" href="#التسجيل">قدّم طلب اهتمامك <ArrowLeft size={18} /></a>
