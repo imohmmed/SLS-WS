@@ -31,4 +31,6 @@
 
 - فحص الصحة: `GET /workshop-api/api/healthz`
 - إرسال التسجيل: `POST /workshop-api/api/registrations`
+- يضيف Apps Script عموداً مستقلاً باسم `نوع الاشتراك` في العمود I، مع بقاء الأعمدة الحالية A:H كما هي.
+- بعد تحديث `Code.gs`، عدّل النشر الحالي إلى إصدار جديد من **Deploy → Manage deployments** حتى يبدأ حفظ الخيار في العمود I.
 
