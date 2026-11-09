@@ -2,8 +2,9 @@ import { type FormEvent, type ReactNode } from 'react';
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useCreateWorkshopRegistration } from '@workspace/api-client-react';
-import { ArrowDown, ArrowLeft, ArrowUpLeft, Check, CircleDot, Feather, Instagram, Layers3, MessageCircle, MoveUpLeft, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowLeft, Camera, Check, ChevronDown, Clock3, Instagram, MapPin, MessageCircle, MoveUpLeft, Smartphone, Sparkles } from 'lucide-react';
 import salasLogo from '@/assets/salas-logo.png';
+import { curriculum, participationTerms, programDays, workshopFaq } from './workshop-content';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -16,6 +17,7 @@ import {
 } from 'wouter';
 
 const queryClient = new QueryClient();
+const toArabicDigits = (value: number) => String(value).replace(/\d/g, (digit) => '٠١٢٣٤٥٦٧٨٩'[Number(digit)]);
 
 function Home() {
   const registration = useCreateWorkshopRegistration();
@@ -71,110 +73,200 @@ function Home() {
   };
 
   return (
-    <main dir="rtl" className="salas-page">
+    <div dir="rtl" className="salas-page">
       <header className="site-header">
         <a href="#البداية" className="brand" aria-label="ورشة سلس، إلى البداية">
-          <img src={salasLogo} alt="شعار سلس" />
+          <img src={salasLogo} alt="" />
           <span>ورشة سلس</span>
         </a>
         <nav aria-label="التنقل الرئيسي">
           <a href="#عن-الورشة">عن الورشة</a>
-          <a href="#ماذا-ستتعلم">ماذا ستتعلم</a>
-          <a href="#التسجيل">التسجيل</a>
+          <a href="#المحاور">شنو راح تتعلم</a>
+          <a href="#البرنامج">برنامج الأيام</a>
+          <a href="#الأجور">الأجور</a>
         </nav>
-        <a className="header-cta" href="#التسجيل">احجز مقعدك <ArrowLeft size={16} /></a>
+        <a className="header-cta" href="#التسجيل">سجّل اهتمامك <ArrowLeft size={16} /></a>
       </header>
 
-      <section className="hero" id="البداية">
-        <div className="hero-copy">
-          <div className="eyebrow"><span className="eyebrow-dot" /> مساحة للمبدعين وصنّاع المحتوى</div>
-          <h1>خلّ فكرتك<br /><span>تلقى صوتها.</span></h1>
-          <p className="hero-lede">ورشة عملية تساعدك ترتّب أفكارك، وتبني حضوراً يشبهك — من أول خاطر إلى محتوى يستحق أن يُرى.</p>
-          <div className="hero-actions">
-            <a className="button button-light" href="#التسجيل">ابدأ رحلتك <ArrowLeft size={18} /></a>
-            <a className="text-link" href="#عن-الورشة">اكتشف تفاصيل الورشة <ArrowDown size={15} /></a>
+      <main>
+        <section className="hero" id="البداية">
+          <div className="hero-copy">
+            <div className="eyebrow"><span className="eyebrow-dot" /> ورشة صناعة الفيديو والمحتوى الرقمي</div>
+          <h1>فكرتك<br /><span>تصير فيديو.</span></h1>
+            <p className="hero-lede">بخمسة أيام تطبيق عملي، تعلّم تختار فكرة، تكتب افتتاحية جذابة، تصوّر بالموبايل وتمنتج على CapCut — حتى لو تبدي من الصفر.</p>
+            <div className="hero-facts">
+              <span><Clock3 size={16} /> خمسة أيام تدريب</span>
+              <span><Camera size={16} /> تطبيق وتصوير فعلي</span>
+              <span><Smartphone size={16} /> iPhone شرط أساسي</span>
+            </div>
+            <div className="hero-actions">
+              <a className="button button-light" href="#التسجيل">قدّم طلب اهتمامك <ArrowLeft size={18} /></a>
+              <a className="text-link" href="https://wa.me/9647757660888" target="_blank" rel="noopener noreferrer">اسألنا على واتساب <MessageCircle size={16} /></a>
+            </div>
+            <div className="hero-note"><span className="tiny-rule" /> التسجيل يبدأ بطلب اهتمام؛ نرسل التفاصيل قبل التأكيد.</div>
           </div>
-          <div className="hero-note"><span className="tiny-rule" /> التفاصيل هنا مبدئية وقابلة للتحديث</div>
-        </div>
-        <div className="hero-art" aria-label="شعار سلس داخل مساحة حمراء هادئة">
-          <div className="art-ring ring-one" /><div className="art-ring ring-two" />
-          <div className="art-label label-top">مساحة للتجربة</div>
-          <div className="logo-stage"><img src={salasLogo} alt="" /></div>
-          <div className="art-label label-bottom">فكرة ← صوت ← أثر</div>
-          <span className="art-star star-one" aria-hidden="true" /><span className="art-star star-two" aria-hidden="true" />
-        </div>
-        <div className="hero-index"><span>٠١</span><span className="index-line" /><span>٠٣</span></div>
-      </section>
-
-      <section className="intro-section" id="عن-الورشة">
-        <div className="section-kicker"><span>٠١</span> الفكرة ببساطة</div>
-        <div className="intro-grid">
-          <h2>مو محتوى أكثر.<br /><em>محتوى أوضح.</em></h2>
-          <div className="intro-text">
-            <p>ورشة سلس مساحة تعلّم وتجريب للمبدعين. نبدأ من الفكرة التي تشغلك، ثم نرتّبها في رسالة واضحة وخطوات قابلة للتطبيق.</p>
-            <p>هذه الصفحة تعرض تصوراً أولياً للورشة؛ نحدّث التفاصيل والأسئلة كلما اتضحت التجربة أكثر.</p>
-            <a href="#التسجيل" className="underlined-link">عرّفنا عنك <ArrowUpLeft size={16} /></a>
+          <div className="hero-art">
+            <div className="art-ring ring-one" /><div className="art-ring ring-two" />
+            <div className="art-label label-top">من الفكرة إلى الفيديو</div>
+            <div className="logo-stage"><img src={salasLogo} alt="شعار ورشة سلس" /></div>
+            <div className="art-label label-bottom">فكرة ← تصوير ← مونتاج</div>
+            <span className="art-star star-one" aria-hidden="true" /><span className="art-star star-two" aria-hidden="true" />
           </div>
-        </div>
-        <div className="statement-strip"><span>الفكرة الجيدة تستحق مساحة.</span><span className="strip-mark">سلس / ورشة للمبدعين</span></div>
-      </section>
+        </section>
 
-      <section className="learning-section" id="ماذا-ستتعلم">
-        <div className="learning-heading">
-          <div><div className="section-kicker light-kicker"><span>٠٢</span> تجربة الورشة</div><h2>من الفكرة<br />إلى الخطوة التالية.</h2></div>
-          <p>محطات مقترحة نعمل من خلالها على تحويل الإلهام إلى ممارسة واضحة — بهدوء، ومن دون وصفات جاهزة.</p>
-        </div>
-        <div className="steps-list">
-          <article className="step-row"><div className="step-number">١</div><div className="step-icon"><MessageCircle size={21} /></div><div className="step-copy"><h3>اكتشاف صوتك</h3><p>نلتقط ما يميزك، ونحدّد الموضوعات التي تهمك فعلاً.</p></div><span className="step-tag">ابدأ من ذاتك</span></article>
-          <article className="step-row"><div className="step-number">٢</div><div className="step-icon"><Layers3 size={21} /></div><div className="step-copy"><h3>ترتيب الفكرة</h3><p>نصوغ الفكرة في زاوية ورسالة يفهمها جمهورك.</p></div><span className="step-tag">وضوح قبل النشر</span></article>
-          <article className="step-row"><div className="step-number">٣</div><div className="step-icon"><Feather size={21} /></div><div className="step-copy"><h3>صناعة محتوى يشبهك</h3><p>نجرّب أشكالاً مناسبة لك، ونرسم لها بداية عملية.</p></div><span className="step-tag">خطوة قابلة للتطبيق</span></article>
-        </div>
-        <div className="learning-footnote"><CircleDot size={14} /> محاور مبدئية قابلة للتعديل بحسب احتياج المشاركين.</div>
-      </section>
-
-      <section className="fit-section">
-        <div className="fit-title"><div className="section-kicker"><span>٠٣</span> لمن هذه المساحة؟</div><h2>لك، إذا كان<br />في بالك شيء.</h2></div>
-        <div className="fit-content">
-          <p>للمبدع الذي يريد أن يبدأ، ولصانع المحتوى الذي يبحث عن اتجاه، ولكل شخص لديه فكرة تستحق أن تأخذ شكلها.</p>
-          <div className="fit-points">
-            <div><span>أ</span><p>تريد بداية أوضح لصناعة المحتوى.</p></div>
-            <div><span>ب</span><p>تبحث عن طريقة تعبّر بها عن خبرتك.</p></div>
-            <div><span>ج</span><p>تحتاج مساحة هادئة لترتيب أفكارك.</p></div>
+        <section className="intro-section" id="عن-الورشة">
+          <div className="section-kicker"><span>٠١</span> تعلّم بالممارسة</div>
+          <div className="intro-grid">
+            <h2>مو بس تمسك موبايل.<br /><em>تسوي فيديو يحچي.</em></h2>
+            <div className="intro-text">
+              <p>صناعة الفيديو تبدأ من فكرة واضحة وقصة قصيرة وافتتاحية تشد المشاهد، وبعدها يجي التصوير والمونتاج والصوت المناسب.</p>
+              <p>بورشة سلس راح تطبق هالخطوات بنفسك، وتتعلم شلون تحول فكرة بسيطة إلى محتوى قابل للنشر على TikTok وInstagram.</p>
+              <a href="#البرنامج" className="underlined-link">شوف برنامج الأيام <ArrowDown size={16} /></a>
+            </div>
           </div>
-          <div className="fit-note"><Sparkles size={16} /> لا تحتاج أن تكون جاهزاً بالكامل؛ يكفي أن تكون فضولياً.</div>
-        </div>
-      </section>
+          <div className="statement-strip"><span>تعلّم. صوّر. مونتج. انشر.</span><span className="strip-mark">خمسة أيام من التطبيق العملي</span></div>
+        </section>
 
-      <section className="registration-section" id="التسجيل">
-        <div className="registration-intro">
-          <div className="section-kicker light-kicker"><span>٠٤</span> خطوتك الأولى</div>
-          <h2>خلّنا نعرف<br />وش يشغلك.</h2>
-          <p>أجب عن الأسئلة التالية، وسنستخدم إجاباتك لفهم احتياجك وصياغة تجربة أقرب لك.</p>
-          <div className="registration-stamp"><img src={salasLogo} alt="" /><span>مساحة تبدأ<br />منك</span></div>
-        </div>
-        <form className="registration-form" onSubmit={submit}>
-          <div className="form-topline"><span>نموذج اهتمام مبدئي</span><span>الحقول ذات العلامة * مطلوبة</span></div>
-          <div className="form-row">
-            <label>الاسم الكامل <b>*</b><input data-testid="input-full-name" required minLength={2} maxLength={120} autoComplete="name" value={form.fullName} onChange={(e) => update('fullName', e.target.value)} placeholder="كيف نناديك؟" /></label>
-            <label>رقم الجوال <b>*</b><input data-testid="input-phone" required minLength={7} maxLength={30} autoComplete="tel" type="tel" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="رقم للتواصل" /></label>
+        <section className="curriculum-section" id="المحاور">
+          <div className="curriculum-heading">
+            <div>
+              <div className="section-kicker"><span>٠٢</span> المهارات اللي راح تكتسبها</div>
+              <h2>من أول فكرة<br /><em>إلى فيديو جاهز.</em></h2>
+            </div>
+            <p>خطوات صناعة الفيديو كلها بمكان واحد: تختار شنو تحچي، شلون تصوره، وشلون ترتبه حتى يصير واضح وممتع.</p>
           </div>
-          <label>البريد الإلكتروني <span className="optional">اختياري</span><input data-testid="input-email" type="email" maxLength={254} autoComplete="email" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="بريدك الإلكتروني" dir="auto" /></label>
-          <div className="form-divider"><span>أسئلة تساعدنا نجهّز مساحة مناسبة لك</span><i /></div>
-          <label>ما المجال الذي تصنع فيه محتواك؟ <span className="optional">قابل للتعديل</span><input data-testid="input-content-field" maxLength={120} value={form.contentField} onChange={(e) => update('contentField', e.target.value)} placeholder="مثال: تعليم، فن، ريادة أعمال..." /></label>
-          <label>كيف تصف تجربتك الحالية؟ <span className="optional">قابل للتعديل</span><textarea data-testid="input-experience" maxLength={120} rows={2} value={form.experience} onChange={(e) => update('experience', e.target.value)} placeholder="في البداية، أنشر باستمرار، أبحث عن اتجاه..." /></label>
-          <label>ما الذي تتمنى أن تخرج به من الورشة؟ <span className="optional">قابل للتعديل</span><textarea data-testid="input-goal" maxLength={500} rows={2} value={form.goal} onChange={(e) => update('goal', e.target.value)} placeholder="اكتب ما يخطر ببالك..." /></label>
-          <label>هل هناك شيء آخر تحب أن نعرفه؟ <span className="optional">اختياري</span><textarea data-testid="input-notes" maxLength={1000} rows={2} value={form.notes} onChange={(e) => update('notes', e.target.value)} placeholder="أي ملاحظة أو سؤال..." /></label>
-          {message && <div className={`form-feedback ${submitted ? 'is-success' : 'is-error'}`} role="status" aria-live="polite">{submitted && <Check size={18} />}<span>{message}</span></div>}
-          <button data-testid="button-submit" className="button button-submit" type="submit" disabled={registration.isPending}>
-            {registration.isPending ? <><span className="pending-dot" /> جارٍ إرسال طلبك</> : submitted ? <>تم إرسال اهتمامك <Check size={18} /></> : <>أرسل اهتمامك <ArrowLeft size={18} /></>}
-          </button>
-          <p className="form-privacy">إجاباتك تساعدنا على فهم احتياجك، ولن نطلب منك أكثر مما يلزم لهذه الخطوة.</p>
-        </form>
-      </section>
+          <div className="curriculum-grid">
+            {curriculum.map((topic, index) => (
+              <article className="curriculum-card" key={topic.title}>
+                <span className="topic-index">{toArabicDigits(index + 1).padStart(2, '٠')}</span>
+                <h3>{topic.title}</h3>
+                <p>{topic.description}</p>
+              </article>
+            ))}
+          </div>
+          <div className="curriculum-note"><Sparkles size={16} /> مو محاضرات نظرية وبس — راح تصور، تجرب، وتتعلم من مراجعة شغلك.</div>
+        </section>
+
+        <section className="fit-section">
+          <div className="fit-title"><div className="section-kicker"><span>٠٣</span> لمن تناسب الورشة؟</div><h2>إلك إذا<br />عندك فكرة.</h2></div>
+          <div className="fit-content">
+            <p>سواء تريد تسوّق لمشروعك بنفسك، أو تتعلم مهارة جديدة، أو تبدي طريقك بصناعة المحتوى — راح تشتغل على فيديوهاتك خطوة بخطوة.</p>
+            <div className="fit-points">
+              <div><span>أ</span><p>أصحاب البراندات والمشاريع الصغيرة.</p></div>
+              <div><span>ب</span><p>المبتدئين اللي يريدون يتعلمون من الصفر.</p></div>
+              <div><span>ج</span><p>اللي يريد يطور مهارته ويفتح فرص عمل بالمحتوى.</p></div>
+            </div>
+            <div className="fit-note"><Smartphone size={17} /> الشرط الأساسي: جهاز iPhone. الخبرة السابقة مو مطلوبة.</div>
+          </div>
+        </section>
+
+        <section className="program-section" id="البرنامج">
+          <div className="program-heading">
+            <div>
+              <div className="section-kicker"><span>٠٤</span> البرنامج التدريبي</div>
+              <h2>خمسة أيام،<br /><em>كل يوم خطوة.</em></h2>
+            </div>
+            <p>تبدأ من الفكرة، وتوصل للتصوير والمونتاج والنشر عبر تمارين ومراجعة جماعية.</p>
+          </div>
+          <div className="program-list">
+            {programDays.map((day, index) => (
+              <article className="program-card" key={day.day}>
+                <div className="program-day"><span>{toArabicDigits(index + 1).padStart(2, '٠')}</span><small>{day.day}</small></div>
+                <div className="program-content">
+                  <h3>{day.title}</h3>
+                  <p className="program-intro">{day.intro}</p>
+                  {day.place && <p className="program-place"><MapPin size={16} /> {day.place}</p>}
+                  <ul>{day.items.map((item) => <li key={item}>{item}</li>)}</ul>
+                </div>
+                <Camera className="program-icon" size={22} aria-hidden="true" />
+              </article>
+            ))}
+          </div>
+          <p className="program-note">تفاصيل الموعد والمكان الرئيسي، وأوقات التجمع والتنقل، نرسلها للمهتمين قبل تأكيد التسجيل.</p>
+        </section>
+
+        <section className="pricing-section" id="الأجور">
+          <div className="pricing-copy">
+            <div className="section-kicker"><span>٠٥</span> الأجور وطريقة الدفع</div>
+            <h2>كل التفاصيل<br /><em>واضحة من البداية.</em></h2>
+            <p>حددنا الأجور حتى تغطي استئجار المكان وتنظيم الورشة والأنشطة العملية. هدفنا نبني مهارة ومجتمع لصناعة المحتوى العراقي.</p>
+            <a className="text-link pricing-contact" href="https://wa.me/9647757660888" target="_blank" rel="noopener noreferrer">عندك سؤال عن الدفع؟ راسلنا <MessageCircle size={16} /></a>
+          </div>
+          <div className="price-card">
+            <div className="price-total-label">إجمالي الأيام الخمسة</div>
+            <div className="price-total">١٢٥٬٠٠٠ <span>دينار عراقي</span></div>
+            <div className="price-per-day">٢٥٬٠٠٠ دينار لليوم الواحد</div>
+            <div className="payment-options">
+              <article><span>الخيار الأول</span><h3>دفع كامل</h3><p>١٢٥٬٠٠٠ دينار قبل بدء الورشة.</p></article>
+              <article><span>الخيار الثاني</span><h3>على دفعتين</h3><p>٧٥٬٠٠٠ دينار للأيام الثلاثة الأولى، و٥٠٬٠٠٠ دينار قبل اليوم الرابع.</p></article>
+            </div>
+            <a className="button price-cta" href="#التسجيل">سجّل اهتمامك <ArrowLeft size={17} /></a>
+          </div>
+        </section>
+
+        <section className="terms-section" id="الشروط">
+          <div className="terms-heading">
+            <div className="section-kicker"><span>٠٦</span> شروط المشاركة</div>
+            <h2>خلّينا نكون<br /><em>واضحين من البداية.</em></h2>
+          </div>
+          <div className="terms-grid">
+            {participationTerms.map((term, index) => (
+              <article className="term-card" key={term.title}>
+                <span>{toArabicDigits(index + 1).padStart(2, '٠')}</span>
+                <div><h3>{term.title}</h3><p>{term.description}</p></div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="faq-section" id="الأسئلة">
+          <div className="faq-heading">
+            <div className="section-kicker"><span>٠٧</span> قبل ما تسجل</div>
+            <h2>أسئلة تتكرر.</h2>
+          </div>
+          <div className="faq-list">
+            {workshopFaq.map((item) => (
+              <details className="faq-item" key={item.question}>
+                <summary>{item.question}<ChevronDown size={18} aria-hidden="true" /></summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <section className="registration-section" id="التسجيل">
+          <div className="registration-intro">
+            <div className="section-kicker light-kicker"><span>٠٨</span> ابدأ بطلب اهتمام</div>
+            <h2>خلّنا نعرف<br />شنو تريد تتعلم.</h2>
+            <p>املأ النموذج حتى نتواصل وياك ونرسل تفاصيل الموعد والمكان وخطوات التأكيد.</p>
+            <a className="registration-whatsapp" href="https://wa.me/9647757660888" target="_blank" rel="noopener noreferrer"><MessageCircle size={17} /> أو راسلنا مباشرة على واتساب</a>
+            <div className="registration-stamp"><img src={salasLogo} alt="" /><span>فكرتك تستحق<br />تنصوّر</span></div>
+          </div>
+          <form className="registration-form" onSubmit={submit}>
+            <div className="form-topline"><span>طلب اهتمام بالورشة</span><span>الاسم والجوال مطلوبان</span></div>
+            <div className="form-notice"><Smartphone size={17} /><span>تذكير: امتلاك iPhone شرط أساسي. إرسال الطلب مو تأكيد حجز نهائي.</span></div>
+            <div className="form-row">
+              <label>الاسم الكامل <b>*</b><input data-testid="input-full-name" required minLength={2} maxLength={120} autoComplete="name" value={form.fullName} onChange={(e) => update('fullName', e.target.value)} placeholder="كيف نناديك؟" /></label>
+              <label>رقم الجوال <b>*</b><input data-testid="input-phone" required minLength={7} maxLength={30} autoComplete="tel" type="tel" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="رقم للتواصل" /></label>
+            </div>
+            <label>البريد الإلكتروني <span className="optional">اختياري</span><input data-testid="input-email" type="email" maxLength={254} autoComplete="email" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="بريدك الإلكتروني" dir="auto" /></label>
+            <div className="form-divider"><span>حتى نعرف شلون نساعدك</span><i /></div>
+            <label>شنو نوع المحتوى أو الفيديوهات اللي تريد تتعلمها؟ <span className="optional">اختياري</span><input data-testid="input-content-field" maxLength={120} value={form.contentField} onChange={(e) => update('contentField', e.target.value)} placeholder="مثال: محتوى لمشروعي، فيديوهات تعليمية..." /></label>
+            <label>هل سبق لك صورت أو منتجت فيديو؟ <span className="optional">اختياري</span><textarea data-testid="input-experience" maxLength={120} rows={2} value={form.experience} onChange={(e) => update('experience', e.target.value)} placeholder="احچيلنا باختصار عن تجربتك..." /></label>
+            <label>شنو هدفك من المشاركة؟ <span className="optional">اختياري</span><textarea data-testid="input-goal" maxLength={500} rows={2} value={form.goal} onChange={(e) => update('goal', e.target.value)} placeholder="شنو تحب تعرف أو تسوي بنهاية الورشة؟" /></label>
+            <label>عندك سؤال أو ملاحظة؟ <span className="optional">اختياري</span><textarea data-testid="input-notes" maxLength={1000} rows={2} value={form.notes} onChange={(e) => update('notes', e.target.value)} placeholder="اكتب أي سؤال تحب نجاوبك عليه..." /></label>
+            {message && <div className={`form-feedback ${submitted ? 'is-success' : 'is-error'}`} role="status" aria-live="polite">{submitted && <Check size={18} />}<span>{message}</span></div>}
+            <button data-testid="button-submit" className="button button-submit" type="submit" disabled={registration.isPending}>
+              {registration.isPending ? <><span className="pending-dot" /> جارٍ إرسال طلبك</> : submitted ? <>وصل طلبك <Check size={18} /></> : <>أرسل طلب الاهتمام <ArrowLeft size={18} /></>}
+            </button>
+            <p className="form-privacy">نستخدم بياناتك للتواصل وياك بخصوص الورشة وترتيب التسجيل.</p>
+          </form>
+        </section>
+      </main>
 
       <footer className="site-footer">
         <a href="#البداية" className="footer-brand"><img src={salasLogo} alt="" /> ورشة سلس</a>
-        <span>مساحة للمبدعين كي يجدوا صوتهم.</span>
+        <span>ورشة صناعة الفيديو والمحتوى الرقمي.</span>
         <div className="footer-socials" aria-label="حسابات ورشة سلس">
           <a className="footer-social" href="https://www.instagram.com/sls___brand" target="_blank" rel="noopener noreferrer" aria-label="حساب ورشة سلس على إنستغرام">
             <Instagram size={16} aria-hidden="true" />
@@ -187,7 +279,7 @@ function Home() {
         </div>
         <a href="#البداية" className="back-top">العودة للأعلى <MoveUpLeft size={15} /></a>
       </footer>
-    </main>
+    </div>
   );
 }
 
