@@ -184,6 +184,18 @@ function Home() {
             ))}
           </div>
           <p className="program-note">تفاصيل الموعد والمكان الرئيسي، وأوقات التجمع والتنقل، نرسلها للمهتمين قبل تأكيد التسجيل.</p>
+          <aside className="challenge-callout" aria-labelledby="challenge-title">
+            <div className="challenge-label"><Sparkles size={18} aria-hidden="true" /> التحدي الأكبر بعد الورشة</div>
+            <h3 id="challenge-title">الأيام الخمسة تخلص.<br />بس التحدي يبدي!</h3>
+            <p className="challenge-intro">مو بس نعلّمك تصور وتمنتج؛ نريد نشوف شنو راح تصنع بمهاراتك الجديدة، ونحتفل بأول خطوة إلك بصناعة المحتوى.</p>
+            <ol className="challenge-steps">
+              <li><strong>باليوم الخامس</strong><p>نجمع فيديوهاتكم وننشر الأعمال على صفحات سلس الرسمية، بموافقة أصحابها، حتى نعرّف الجمهور بإبداعاتكم.</p></li>
+              <li><strong>خلال أسبوعين</strong><p>نتابع أداء الفيديوهات وعدد المشاهدات والتفاعل، ونشوف شلون طبقتوا اللي تعلمتوه خلال الورشة.</p></li>
+              <li><strong>بالورشة الثانية</strong><p>بعد أسبوعين، ندعو المشاركين المتميزين من الورشة الأولى للحضور ويانه، ونعلن صاحب أعلى أداء ومشاهدات.</p></li>
+            </ol>
+            <div className="challenge-prize"><Sparkles size={20} aria-hidden="true" /><p>جائزة قيّمة بانتظار الفائز.<br /><strong>شنو هي؟ تبقى مفاجأة ليوم الورشة الثانية.</strong></p></div>
+            <p className="challenge-note">معايير التقييم وطريقة احتساب النتائج نوضحها للمشاركين قبل بدء التحدي. المشاهدات والانتشار مو مضمونين.</p>
+          </aside>
         </section>
 
         <section className="pricing-section" id="الأجور">

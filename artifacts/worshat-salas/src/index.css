@@ -511,6 +511,17 @@
 .program-content li { padding-right: .15rem; }
 .program-icon { color: #a47776; margin-top: .15rem; }
 .program-note { margin: 1.5rem 0 0; padding: 1rem 1.1rem; border: 1px solid #d7cbc2; border-radius: 14px; color: #685653; font-size: .8rem; line-height: 1.8; }
+.challenge-callout { margin-top: 2.5rem; padding: clamp(1.35rem, 4vw, 3rem); border-radius: 24px; background: var(--wine-deep); color: #fff8f1; }
+.challenge-label { display: flex; align-items: center; gap: .55rem; font-size: .8rem; color: #efd0c8; }
+.challenge-callout h3 { margin: 1.15rem 0 .9rem; font: 600 clamp(1.65rem, 3vw, 2.6rem)/1.5 'Alexandria', sans-serif; letter-spacing: -.04em; }
+.challenge-intro { max-width: 650px; margin: 0; color: #f0dcd5; font-size: .92rem; line-height: 1.95; }
+.challenge-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; padding: 1.5rem 0; margin: 1.5rem 0 0; list-style: none; border-top: 1px solid #8b5360; border-bottom: 1px solid #8b5360; }
+.challenge-steps strong { font-size: .95rem; color: #fff8f1; }
+.challenge-steps p { margin: .5rem 0 0; color: #f0dcd5; font-size: .83rem; line-height: 1.9; }
+.challenge-prize { display: flex; align-items: center; gap: .85rem; margin-top: 1.4rem; }
+.challenge-prize svg { flex: 0 0 auto; color: #efd0c8; }
+.challenge-prize p { margin: 0; font-size: .9rem; line-height: 1.9; }
+.challenge-note { margin: 1.1rem 0 0; color: #dfbeb7; font-size: .75rem; line-height: 1.9; }
 .pricing-section { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: clamp(3rem, 8vw, 8rem); padding: 7rem clamp(1.4rem, 10vw, 10rem); background: var(--paper); }
 .pricing-copy h2 { margin: 1.4rem 0 1rem; font: 600 clamp(2.6rem, 5vw, 4.4rem)/1.4 'Alexandria', sans-serif; letter-spacing: -.06em; }
 .pricing-copy h2 em { color: var(--wine); font-style: normal; }
@@ -656,6 +667,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .program-content ul { font-size: .79rem; padding-right: 1rem; }
   .program-place { font-size: .75rem; }
   .program-note { font-size: .75rem; }
+  .challenge-steps { grid-template-columns: 1fr; gap: 1.2rem; }
+  .challenge-callout { margin-top: 1.75rem; border-radius: 20px; }
   .pricing-section { grid-template-columns: 1fr; padding: 4.5rem 1.2rem; gap: 1.8rem; }
   .pricing-copy h2 { font-size: 2.7rem; }
   .price-card { padding: 1.25rem; border-radius: 20px; }
