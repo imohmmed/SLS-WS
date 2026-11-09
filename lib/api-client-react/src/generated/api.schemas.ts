@@ -13,6 +13,15 @@ export interface HealthStatus {
   status: string;
 }
 
+export type WorkshopRegistrationInputSubscriptionPlan = typeof WorkshopRegistrationInputSubscriptionPlan[keyof typeof WorkshopRegistrationInputSubscriptionPlan];
+
+
+export const WorkshopRegistrationInputSubscriptionPlan = {
+  full: 'full',
+  installments: 'installments',
+  'single-day': 'single-day',
+} as const;
+
 export interface WorkshopRegistrationInput {
   /**
      * @minLength 2
@@ -29,6 +38,7 @@ export interface WorkshopRegistrationInput {
      * @maxLength 254
      */
   email: string;
+  subscriptionPlan: WorkshopRegistrationInputSubscriptionPlan;
   /**
      * @minLength 1
      * @maxLength 120
@@ -46,7 +56,7 @@ export interface WorkshopRegistrationInput {
   goal: string;
   /**
      * @minLength 1
-     * @maxLength 1000
+     * @maxLength 850
      */
   notes: string;
 }

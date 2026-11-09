@@ -5,6 +5,7 @@
  * API specification
  * OpenAPI spec version: 0.1.0
  */
+import type { WorkshopRegistrationInputSubscriptionPlan } from './workshopRegistrationInputSubscriptionPlan';
 
 export interface WorkshopRegistrationInput {
   /**
@@ -22,6 +23,7 @@ export interface WorkshopRegistrationInput {
      * @maxLength 254
      */
   email: string;
+  subscriptionPlan: WorkshopRegistrationInputSubscriptionPlan;
   /**
      * @minLength 1
      * @maxLength 120
@@ -39,7 +41,7 @@ export interface WorkshopRegistrationInput {
   goal: string;
   /**
      * @minLength 1
-     * @maxLength 1000
+     * @maxLength 850
      */
   notes: string;
 }

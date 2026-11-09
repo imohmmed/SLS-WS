@@ -27,6 +27,7 @@ function Home() {
     fullName: '',
     phone: '',
     email: '',
+    subscriptionPlan: '',
     contentField: '',
     experience: '',
     goal: '',
@@ -57,12 +58,23 @@ function Home() {
       return;
     }
 
+    const selectedPlan = (
+      ['full', 'installments', 'single-day'] as const
+    ).find((plan) => plan === form.subscriptionPlan);
+
+    if (!selectedPlan) {
+      setSubmitted(false);
+      setMessage('اختار نوع الاشتراك حتى نكمل طلبك.');
+      return;
+    }
+
     registration.mutate(
       {
         data: {
           fullName: form.fullName.trim(),
           phone: form.phone.trim(),
           email: form.email.trim(),
+          subscriptionPlan: selectedPlan,
           contentField: form.contentField.trim(),
           experience: form.experience.trim(),
           goal: form.goal.trim(),
@@ -235,6 +247,7 @@ function Home() {
             <div className="payment-options">
               <article><span>الخيار الأول</span><h3>دفع كامل</h3><p>١٢٥٬٠٠٠ دينار قبل بدء الورشة.</p></article>
               <article><span>الخيار الثاني</span><h3>على دفعتين</h3><p>٧٥٬٠٠٠ دينار للأيام الثلاثة الأولى، و٥٠٬٠٠٠ دينار قبل اليوم الرابع.</p></article>
+              <article><span>الخيار الثالث</span><h3>يوم واحد</h3><p>٢٥٬٠٠٠ دينار عن يوم واحد من أيام الورشة.</p></article>
             </div>
             <a className="button price-cta" href="#register">سجّل اهتمامك <ArrowLeft size={17} /></a>
           </div>
@@ -256,11 +269,28 @@ function Home() {
               <label>رقم الجوال <b aria-hidden="true">*</b><input data-testid="input-phone" name="phone" required minLength={7} maxLength={30} autoComplete="tel" type="tel" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="رقم للتواصل" /></label>
             </div>
             <label>البريد الإلكتروني <b aria-hidden="true">*</b><input data-testid="input-email" name="email" type="email" required maxLength={254} autoComplete="email" value={form.email} onChange={(e) => update('email', e.target.value)} placeholder="بريدك الإلكتروني" dir="auto" /></label>
+            <fieldset className="plan-picker">
+              <legend>شنو نوع الاشتراك اللي يناسبك؟ <b aria-hidden="true">*</b></legend>
+              <div className="plan-options">
+                <label className={`plan-option ${form.subscriptionPlan === 'full' ? 'is-selected' : ''}`}>
+                  <input data-testid="option-plan-full" type="radio" name="subscriptionPlan" value="full" required checked={form.subscriptionPlan === 'full'} onChange={(e) => update('subscriptionPlan', e.target.value)} />
+                  <span className="plan-option-copy"><strong>الورشة كاملة — ١٢٥٬٠٠٠ دينار</strong><small>دفع كامل قبل بدء الورشة.</small></span>
+                </label>
+                <label className={`plan-option ${form.subscriptionPlan === 'installments' ? 'is-selected' : ''}`}>
+                  <input data-testid="option-plan-installments" type="radio" name="subscriptionPlan" value="installments" required checked={form.subscriptionPlan === 'installments'} onChange={(e) => update('subscriptionPlan', e.target.value)} />
+                  <span className="plan-option-copy"><strong>الورشة كاملة — على دفعتين</strong><small>٧٥٬٠٠٠ دينار للأيام الثلاثة الأولى، و٥٠٬٠٠٠ قبل اليوم الرابع.</small></span>
+                </label>
+                <label className={`plan-option ${form.subscriptionPlan === 'single-day' ? 'is-selected' : ''}`}>
+                  <input data-testid="option-plan-single-day" type="radio" name="subscriptionPlan" value="single-day" required checked={form.subscriptionPlan === 'single-day'} onChange={(e) => update('subscriptionPlan', e.target.value)} />
+                  <span className="plan-option-copy"><strong>يوم واحد — ٢٥٬٠٠٠ دينار</strong><small>٢٥٬٠٠٠ دينار عن يوم واحد من أيام الورشة.</small></span>
+                </label>
+              </div>
+            </fieldset>
             <div className="form-divider"><span>حتى نعرف شلون نساعدك</span><i /></div>
             <label>شنو نوع المحتوى أو الفيديوهات اللي تريد تتعلمها؟ <b aria-hidden="true">*</b><input data-testid="input-content-field" name="contentField" required maxLength={120} value={form.contentField} onChange={(e) => update('contentField', e.target.value)} placeholder="مثال: محتوى لمشروعي، فيديوهات تعليمية..." /></label>
             <label>هل سبق لك صورت أو منتجت فيديو؟ <b aria-hidden="true">*</b><textarea data-testid="input-experience" name="experience" required maxLength={120} rows={2} value={form.experience} onChange={(e) => update('experience', e.target.value)} placeholder="احچيلنا باختصار عن تجربتك..." /></label>
             <label>شنو هدفك من المشاركة؟ <b aria-hidden="true">*</b><textarea data-testid="input-goal" name="goal" required maxLength={500} rows={2} value={form.goal} onChange={(e) => update('goal', e.target.value)} placeholder="شنو تحب تعرف أو تسوي بنهاية الورشة؟" /></label>
-            <label>عندك سؤال أو ملاحظة؟ <b aria-hidden="true">*</b><textarea data-testid="input-notes" name="notes" required maxLength={1000} rows={2} value={form.notes} onChange={(e) => update('notes', e.target.value)} placeholder="اكتب أي سؤال تحب نجاوبك عليه..." /></label>
+            <label>عندك سؤال أو ملاحظة؟ <b aria-hidden="true">*</b><textarea data-testid="input-notes" name="notes" required maxLength={850} rows={2} value={form.notes} onChange={(e) => update('notes', e.target.value)} placeholder="اكتب أي سؤال تحب نجاوبك عليه..." /></label>
             {message && <div className={`form-feedback ${submitted ? 'is-success' : 'is-error'}`} role="status" aria-live="polite">{submitted && <Check size={18} />}<span>{message}</span></div>}
             <button data-testid="button-submit" className="button button-submit" type="submit" disabled={registration.isPending}>
               {registration.isPending ? <><span className="pending-dot" /> جارٍ إرسال طلبك</> : submitted ? <>وصل طلبك <Check size={18} /></> : <>أرسل طلب الاهتمام <ArrowLeft size={18} /></>}

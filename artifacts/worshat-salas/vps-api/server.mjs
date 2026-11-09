@@ -125,6 +125,7 @@ function validateRegistration(value) {
     fullName: 120,
     phone: 30,
     email: 254,
+    subscriptionPlan: 24,
     contentField: 120,
     experience: 120,
     goal: 500,
@@ -146,6 +147,9 @@ function validateRegistration(value) {
   if (registration.fullName.length < 2) return null;
   if (registration.phone.length < 7) return null;
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(registration.email)) {
+    return null;
+  }
+  if (!["full", "installments", "single-day"].includes(registration.subscriptionPlan)) {
     return null;
   }
 
@@ -285,7 +289,16 @@ async function handleRequest(request, response) {
   }
 
   try {
-    const succeeded = await forwardRegistration(endpoint, registration);
+    const planLabels = {
+      full: "الورشة كاملة، دفع كامل، ١٢٥٬٠٠٠ دينار",
+      installments:
+        "الورشة كاملة على دفعتين: ٧٥٬٠٠٠ للأيام الثلاثة الأولى و٥٠٬٠٠٠ قبل اليوم الرابع",
+      "single-day": "يوم واحد، ٢٥٬٠٠٠ دينار",
+    };
+    const { subscriptionPlan, ...sheetRegistration } = registration;
+    sheetRegistration.notes =
+      `خيار الاشتراك: ${planLabels[subscriptionPlan]}\n\nملاحظة: ${registration.notes}`;
+    const succeeded = await forwardRegistration(endpoint, sheetRegistration);
     if (!succeeded) {
       console.error("Apps Script rejected or failed to save a registration.");
       sendJson(

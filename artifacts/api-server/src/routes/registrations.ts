@@ -18,16 +18,40 @@ router.post("/registrations", async (req, res): Promise<void> => {
     return;
   }
 
-  const { fullName, phone, email, contentField, experience, goal, notes } =
-    parsed.data;
+  const {
+    fullName,
+    phone,
+    email,
+    subscriptionPlan,
+    contentField,
+    experience,
+    goal,
+    notes,
+  } = parsed.data;
   if (
-    [fullName, phone, email, contentField, experience, goal, notes].some(
+    [
+      fullName,
+      phone,
+      email,
+      subscriptionPlan,
+      contentField,
+      experience,
+      goal,
+      notes,
+    ].some(
       (value) => !value.trim(),
     )
   ) {
     res.status(400).json({ error: "يرجى تعبئة جميع الحقول." });
     return;
   }
+
+  const planLabels = {
+    full: "الورشة كاملة، دفع كامل، ١٢٥٬٠٠٠ دينار",
+    installments:
+      "الورشة كاملة على دفعتين: ٧٥٬٠٠٠ للأيام الثلاثة الأولى و٥٠٬٠٠٠ قبل اليوم الرابع",
+    "single-day": "يوم واحد، ٢٥٬٠٠٠ دينار",
+  } as const;
 
   try {
     const response = await connectors.proxy(
@@ -49,7 +73,7 @@ router.post("/registrations", async (req, res): Promise<void> => {
               contentField.trim(),
               experience.trim(),
               goal.trim(),
-              notes.trim(),
+              `خيار الاشتراك: ${planLabels[subscriptionPlan]}\n\nملاحظة: ${notes.trim()}`,
             ],
           ],
         },

@@ -9,4 +9,5 @@
 export * from './apiError';
 export * from './healthStatus';
 export * from './workshopRegistrationInput';
+export * from './workshopRegistrationInputSubscriptionPlan';
 export * from './workshopRegistrationReceipt';

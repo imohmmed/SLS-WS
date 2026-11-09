@@ -35,7 +35,7 @@ export const createWorkshopRegistrationBodyExperienceMax = 120;
 
 export const createWorkshopRegistrationBodyGoalMax = 500;
 
-export const createWorkshopRegistrationBodyNotesMax = 1000;
+export const createWorkshopRegistrationBodyNotesMax = 850;
 
 
 
@@ -43,6 +43,7 @@ export const CreateWorkshopRegistrationBody = zod.object({
   "fullName": zod.string().min(createWorkshopRegistrationBodyFullNameMin).max(createWorkshopRegistrationBodyFullNameMax),
   "phone": zod.string().min(createWorkshopRegistrationBodyPhoneMin).max(createWorkshopRegistrationBodyPhoneMax),
   "email": zod.string().email().min(createWorkshopRegistrationBodyEmailMin).max(createWorkshopRegistrationBodyEmailMax),
+  "subscriptionPlan": zod.enum(['full', 'installments', 'single-day']),
   "contentField": zod.string().min(1).max(createWorkshopRegistrationBodyContentFieldMax),
   "experience": zod.string().min(1).max(createWorkshopRegistrationBodyExperienceMax),
   "goal": zod.string().min(1).max(createWorkshopRegistrationBodyGoalMax),
