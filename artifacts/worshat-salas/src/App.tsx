@@ -263,7 +263,6 @@ function Home() {
           </div>
           <form className="registration-form" onSubmit={submit}>
             <div className="form-topline"><span>طلب اهتمام بالورشة</span><span>كل الحقول مطلوبة</span></div>
-            <div className="form-notice"><Smartphone size={17} /><span>تذكير: امتلاك iPhone شرط أساسي. إرسال الطلب مو تأكيد حجز نهائي.</span></div>
             <div className="form-row">
               <label>الاسم الكامل <b aria-hidden="true">*</b><input data-testid="input-full-name" name="fullName" required minLength={2} maxLength={120} autoComplete="name" value={form.fullName} onChange={(e) => update('fullName', e.target.value)} placeholder="كيف نناديك؟" /></label>
               <label>رقم الجوال <b aria-hidden="true">*</b><input data-testid="input-phone" name="phone" required minLength={7} maxLength={30} autoComplete="tel" type="tel" value={form.phone} onChange={(e) => update('phone', e.target.value)} placeholder="رقم للتواصل" /></label>

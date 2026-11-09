@@ -1,0 +1,326 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - link "ورشة سلس، إلى البداية" [ref=e5] [cursor=pointer]:
+        - /url: "#home"
+        - generic [ref=e6]: ورشة سلس
+      - link "سجّل اهتمامك" [ref=e7] [cursor=pointer]:
+        - /url: "#register"
+    - main [ref=e10]:
+      - generic [ref=e11]:
+        - generic [ref=e12]:
+          - generic [ref=e13]: ورشة صناعة الفيديو والمحتوى الرقمي
+          - heading "فكرتك تصير فيديو." [level=1] [ref=e15]: فكرتكتصير فيديو.
+          - paragraph [ref=e16]: بخمسة أيام تطبيق عملي، تعلّم تختار فكرة، تكتب افتتاحية جذابة، تصوّر بالموبايل وتمنتج على CapCut — حتى لو تبدي من الصفر.
+          - generic [ref=e17]:
+            - generic [ref=e18]: خمسة أيام تدريب
+            - generic [ref=e22]: تطبيق وتصوير فعلي
+            - generic [ref=e26]: iPhone شرط أساسي
+            - generic [ref=e29]: ١٢٥٬٠٠٠ د.ع للورشة كاملة
+          - generic [ref=e30]:
+            - link "قدّم طلب اهتمامك" [ref=e31] [cursor=pointer]:
+              - /url: "#register"
+            - link "اسألنا على واتساب" [ref=e34] [cursor=pointer]:
+              - /url: https://wa.me/9647757660888
+          - generic [ref=e37]: التسجيل يبدأ بطلب اهتمام؛ نرسل التفاصيل قبل التأكيد.
+        - generic [ref=e39]:
+          - generic [ref=e42]: من الفكرة إلى الفيديو
+          - img "شعار ورشة سلس" [ref=e44]
+          - generic [ref=e45]: فكرة ← تصوير ← مونتاج
+      - generic [ref=e48]:
+        - generic [ref=e49]:
+          - generic [ref=e50]: ٠١
+          - text: تعلّم بالممارسة
+        - generic [ref=e51]:
+          - heading [level=2] [ref=e52]:
+            - text: مو بس تمسك موبايل.
+            - emphasis [ref=e53]: تسوي فيديو يحچي.
+          - generic [ref=e54]:
+            - paragraph [ref=e55]: صناعة الفيديو تبدأ من فكرة واضحة وقصة قصيرة وافتتاحية تشد المشاهد، وبعدها يجي التصوير والمونتاج والصوت المناسب.
+            - paragraph [ref=e56]: بورشة سلس راح تطبق هالخطوات بنفسك، وتتعلم شلون تحول فكرة بسيطة إلى محتوى قابل للنشر على TikTok وInstagram.
+            - link "شوف برنامج الأيام" [ref=e57] [cursor=pointer]:
+              - /url: "#program"
+        - generic [ref=e60]:
+          - generic [ref=e61]: تعلّم. صوّر. مونتج. انشر.
+          - generic [ref=e62]: خمسة أيام من التطبيق العملي
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - generic [ref=e66]:
+              - generic [ref=e67]: ٠٢
+              - text: المهارات اللي راح تكتسبها
+            - heading [level=2] [ref=e68]:
+              - text: من أول فكرة
+              - emphasis [ref=e69]: إلى فيديو جاهز.
+          - paragraph [ref=e70]: "خطوات صناعة الفيديو كلها بمكان واحد: تختار شنو تحچي، شلون تصوره، وشلون ترتبه حتى يصير واضح وممتع."
+        - generic [ref=e71]:
+          - article [ref=e72]:
+            - generic [ref=e73]: ٠١
+            - heading "اختيار الفكرة والافتتاحية" [level=3] [ref=e74]
+            - paragraph [ref=e75]: تتعلم شلون تختار فكرة واضحة وتبدأ الفيديو بجملة تجذب الانتباه من أول لحظة.
+          - article [ref=e76]:
+            - generic [ref=e77]: ٠٢
+            - heading "القصة وزاوية التقديم" [level=3] [ref=e78]
+            - paragraph [ref=e79]: ترتب الفكرة كسرد بسيط ومفهوم، وتختار الزاوية اللي تناسب جمهورك.
+          - article [ref=e80]:
+            - generic [ref=e81]: ٠٣
+            - heading "تصوير ذكي بالموبايل" [level=3] [ref=e82]
+            - paragraph [ref=e83]: تجرب زوايا التصوير، حركة الكاميرا، الإضاءة، وتكوين المشهد.
+          - article [ref=e84]:
+            - generic [ref=e85]: ٠٤
+            - heading "الصوت والموسيقى" [level=3] [ref=e86]
+            - paragraph [ref=e87]: تختار موسيقى ومؤثرات صوتية تخدم الفيديو بدل ما تشتت المشاهد.
+          - article [ref=e88]:
+            - generic [ref=e89]: ٠٥
+            - heading "المونتاج على CapCut" [level=3] [ref=e90]
+            - paragraph [ref=e91]: تتعلم القص، ترتيب اللقطات، الانتقالات، المؤثرات، وتجهيز الفيديو للنشر.
+          - article [ref=e92]:
+            - generic [ref=e93]: ٠٦
+            - heading "تصوير النهار والليل" [level=3] [ref=e94]
+            - paragraph [ref=e95]: تطبق عملياً على الإضاءة الطبيعية والتصوير بأجواء وإضاءة مختلفة.
+          - article [ref=e96]:
+            - generic [ref=e97]: ٠٧
+            - heading "محتوى للبراندات والمشاريع" [level=3] [ref=e98]
+            - paragraph [ref=e99]: تحول فكرة مشروع أو منتج إلى فيديو واضح يخاطب جمهوره.
+          - article [ref=e100]:
+            - generic [ref=e101]: ٠٨
+            - heading "النشر وقراءة الأداء" [level=3] [ref=e102]
+            - paragraph [ref=e103]: تتعرف على أساسيات النشر ومؤشرات الأداء وفرص الظهور على TikTok وInstagram، من دون وعود بوصول مضمون.
+        - generic [ref=e104]: مو محاضرات نظرية وبس — راح تصور، تجرب، وتتعلم من مراجعة شغلك.
+      - generic [ref=e108]:
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - generic [ref=e111]: ٠٣
+            - text: لمن تناسب الورشة؟
+          - heading "إلك إذا عندك فكرة." [level=2] [ref=e112]: إلك إذاعندك فكرة.
+        - generic [ref=e113]:
+          - paragraph [ref=e114]: سواء تريد تسوّق لمشروعك بنفسك، أو تتعلم مهارة جديدة، أو تبدي طريقك بصناعة المحتوى — راح تشتغل على فيديوهاتك خطوة بخطوة.
+          - generic [ref=e115]:
+            - generic [ref=e116]:
+              - generic [ref=e117]: أ
+              - paragraph [ref=e118]: أصحاب البراندات والمشاريع الصغيرة.
+            - generic [ref=e119]:
+              - generic [ref=e120]: ب
+              - paragraph [ref=e121]: المبتدئين اللي يريدون يتعلمون من الصفر.
+            - generic [ref=e122]:
+              - generic [ref=e123]: ج
+              - paragraph [ref=e124]: اللي يريد يطور مهارته ويفتح فرص عمل بالمحتوى.
+          - generic [ref=e125]: "الشرط الأساسي: جهاز iPhone. الخبرة السابقة مو مطلوبة."
+      - generic [ref=e128]:
+        - generic [ref=e129]:
+          - generic [ref=e130]:
+            - generic [ref=e131]:
+              - generic [ref=e132]: ٠٤
+              - text: البرنامج التدريبي
+            - heading [level=2] [ref=e133]:
+              - text: خمسة أيام،
+              - emphasis [ref=e134]: كل يوم خطوة.
+          - paragraph [ref=e135]: تبدأ من الفكرة، وتوصل للتصوير والمونتاج والنشر عبر تمارين ومراجعة جماعية.
+        - generic [ref=e136]:
+          - article [ref=e137]:
+            - generic [ref=e138]:
+              - generic [ref=e139]: ٠١
+              - generic [ref=e140]: اليوم الأول
+            - generic [ref=e141]:
+              - heading "الفكرة والتصوير" [level=3] [ref=e142]
+              - paragraph [ref=e143]: نبني الأساس، من معرفة نوع المحتوى إلى أول لقطة.
+              - list [ref=e144]:
+                - listitem [ref=e145]: الفرق بين المحتوى الشخصي والتجاري.
+                - listitem [ref=e146]: اختيار الفكرة، الافتتاحية الجاذبة، وبناء قصة للفيديو.
+                - listitem [ref=e147]: زوايا التصوير والإضاءة وحركة الكاميرا.
+                - listitem [ref=e148]: الموسيقى والمؤثرات والتعرف على أدوات CapCut.
+          - article [ref=e152]:
+            - generic [ref=e153]:
+              - generic [ref=e154]: ٠٢
+              - generic [ref=e155]: اليوم الثاني
+            - generic [ref=e156]:
+              - heading "مهمتك الأولى" [level=3] [ref=e157]
+              - paragraph [ref=e158]: تصور فيديو بنفسك في البيت، وترجع بيه حتى نطوره سوا.
+              - list [ref=e159]:
+                - listitem [ref=e160]: تختار فكرة وتكتب افتتاحيتها.
+                - listitem [ref=e161]: تصور الفيديو وتمنتجه باستخدام CapCut.
+                - listitem [ref=e162]: نعرض الأعمال ونحللها ونوضح طرق تطويرها.
+          - article [ref=e166]:
+            - generic [ref=e167]:
+              - generic [ref=e168]: ٠٣
+              - generic [ref=e169]: اليوم الثالث
+            - generic [ref=e170]:
+              - heading "تطبيق عملي" [level=3] [ref=e171]
+              - paragraph [ref=e172]: نشتغل داخل مكان الورشة على فيديو من البداية للنهاية.
+              - list [ref=e173]:
+                - listitem [ref=e174]: تصوير مشاهد متنوعة والتدريب على الحركة والزوايا.
+                - listitem [ref=e175]: تطبيق المونتاج والمؤثرات على المادة المصورة.
+                - listitem [ref=e176]: مراجعة الأعمال وتصحيح الأخطاء خطوة بخطوة.
+          - article [ref=e180]:
+            - generic [ref=e181]:
+              - generic [ref=e182]: ٠٤
+              - generic [ref=e183]: اليوم الرابع
+            - generic [ref=e184]:
+              - heading "صناعة المحتوى بالنهار" [level=3] [ref=e185]
+              - paragraph [ref=e186]: نطلع كمجموعة نصور قصصاً ومشاهد من الحياة اليومية.
+              - paragraph [ref=e187]: باص جماعي من نقطة تجمع قرب رضا علوان إلى شارع المتنبي.
+              - list [ref=e191]:
+                - listitem [ref=e192]: اختيار المشاهد والقصص المناسبة للتصوير.
+                - listitem [ref=e193]: تطبيق الافتتاحية والتصوير بالحركة والإضاءة الطبيعية.
+                - listitem [ref=e194]: تبادل الأفكار والخبرة والعمل كمجتمع واحد.
+          - article [ref=e198]:
+            - generic [ref=e199]:
+              - generic [ref=e200]: ٠٥
+              - generic [ref=e201]: اليوم الخامس
+            - generic [ref=e202]:
+              - heading "المحتوى الليلي والنشر" [level=3] [ref=e203]
+              - paragraph [ref=e204]: نكمل التطبيق بالليل، وبعدها نراجع شلون ننشر ونقرأ النتائج.
+              - paragraph [ref=e205]: باص جماعي إلى شارع الرشيد أو موقع يُحدد لاحقاً.
+              - list [ref=e209]:
+                - listitem [ref=e210]: أساسيات التصوير الليلي واستخدام الإضاءة.
+                - listitem [ref=e211]: صناعة فيديو بأجواء مختلفة ومونتاجه.
+                - listitem [ref=e212]: فهم توقيت النشر ومؤشرات الأداء وفرص الظهور.
+                - listitem [ref=e213]: تحليل الأعمال النهائية ومراجعة تجربة الأيام الخمسة.
+                - listitem [ref=e214]: تجميع الفيديوهات وإطلاق تحدي الأسبوعين على صفحات سلس الرسمية، بموافقة أصحاب الأعمال.
+        - paragraph [ref=e218]: تفاصيل الموعد والمكان الرئيسي، وأوقات التجمع والتنقل، نرسلها للمهتمين قبل تأكيد التسجيل.
+        - complementary [ref=e219]:
+          - generic [ref=e220]: التحدي الأكبر بعد الورشة
+          - heading "الأيام الخمسة تخلص. بس التحدي يبدي!" [level=3] [ref=e224]: الأيام الخمسة تخلص.بس التحدي يبدي!
+          - paragraph [ref=e225]: مو بس نعلّمك تصور وتمنتج؛ نريد نشوف شنو راح تصنع بمهاراتك الجديدة، ونحتفل بأول خطوة إلك بصناعة المحتوى.
+          - list [ref=e226]:
+            - listitem [ref=e227]:
+              - strong [ref=e228]: باليوم الخامس
+              - paragraph [ref=e229]: نجمع فيديوهاتكم وننشر الأعمال على صفحات سلس الرسمية، بموافقة أصحابها، حتى نعرّف الجمهور بإبداعاتكم.
+            - listitem [ref=e230]:
+              - strong [ref=e231]: خلال أسبوعين
+              - paragraph [ref=e232]: نتابع أداء الفيديوهات وعدد المشاهدات والتفاعل، ونشوف شلون طبقتوا اللي تعلمتوه خلال الورشة.
+            - listitem [ref=e233]:
+              - strong [ref=e234]: بالورشة الثانية
+              - paragraph [ref=e235]: بعد أسبوعين، ندعو المشاركين المتميزين من الورشة الأولى للحضور ويانه، ونعلن صاحب أعلى أداء ومشاهدات.
+          - paragraph [ref=e240]:
+            - text: جائزة قيّمة بانتظار الفائز.
+            - strong [ref=e241]: شنو هي؟ تبقى مفاجأة ليوم الورشة الثانية.
+          - paragraph [ref=e242]: معايير التقييم وطريقة احتساب النتائج نوضحها للمشاركين قبل بدء التحدي. المشاهدات والانتشار مو مضمونين.
+      - generic [ref=e243]:
+        - generic [ref=e244]:
+          - generic [ref=e245]:
+            - generic [ref=e246]: ٠٥
+            - text: الأجور وطريقة الدفع
+          - heading [level=2] [ref=e247]:
+            - text: كل التفاصيل
+            - emphasis [ref=e248]: واضحة من البداية.
+          - paragraph [ref=e249]: حددنا الأجور حتى تغطي استئجار المكان وتنظيم الورشة والأنشطة العملية. هدفنا نبني مهارة ومجتمع لصناعة المحتوى العراقي.
+          - link "عندك سؤال عن الدفع؟ راسلنا" [ref=e250] [cursor=pointer]:
+            - /url: https://wa.me/9647757660888
+        - generic [ref=e253]:
+          - generic [ref=e254]: إجمالي الأيام الخمسة
+          - generic [ref=e255]:
+            - text: ١٢٥٬٠٠٠
+            - generic [ref=e256]: دينار عراقي
+          - generic [ref=e257]: ٢٥٬٠٠٠ دينار لليوم الواحد
+          - generic [ref=e258]:
+            - article [ref=e259]:
+              - text: الخيار الأول
+              - heading "دفع كامل" [level=3] [ref=e260]
+              - paragraph [ref=e261]: ١٢٥٬٠٠٠ دينار قبل بدء الورشة.
+            - article [ref=e262]:
+              - text: الخيار الثاني
+              - heading "على دفعتين" [level=3] [ref=e263]
+              - paragraph [ref=e264]: ٧٥٬٠٠٠ دينار للأيام الثلاثة الأولى، و٥٠٬٠٠٠ دينار قبل اليوم الرابع.
+            - article [ref=e265]:
+              - text: الخيار الثالث
+              - heading "يوم واحد" [level=3] [ref=e266]
+              - paragraph [ref=e267]: ٢٥٬٠٠٠ دينار عن يوم واحد من أيام الورشة.
+          - link "سجّل اهتمامك" [ref=e268] [cursor=pointer]:
+            - /url: "#register"
+      - generic [ref=e271]:
+        - generic [ref=e272]:
+          - generic [ref=e273]:
+            - generic [ref=e274]: ٠٦
+            - text: ابدأ بطلب اهتمام
+          - heading "خلّنا نعرف شنو تريد تتعلم." [level=2] [ref=e275]: خلّنا نعرفشنو تريد تتعلم.
+          - paragraph [ref=e276]: املأ النموذج حتى نتواصل وياك ونرسل تفاصيل الموعد والمكان وخطوات التأكيد.
+          - link "أو راسلنا مباشرة على واتساب" [ref=e277] [cursor=pointer]:
+            - /url: https://wa.me/9647757660888
+          - generic [ref=e280]: فكرتك تستحقتنصوّر
+        - generic [ref=e282]:
+          - generic [ref=e283]:
+            - generic [ref=e284]: طلب اهتمام بالورشة
+            - generic [ref=e285]: كل الحقول مطلوبة
+          - generic [ref=e286]:
+            - generic [ref=e287]:
+              - text: الاسم الكامل *
+              - textbox "الاسم الكامل" [ref=e288]:
+                - /placeholder: كيف نناديك؟
+            - generic [ref=e289]:
+              - text: رقم الجوال *
+              - textbox "رقم الجوال" [ref=e290]:
+                - /placeholder: رقم للتواصل
+          - generic [ref=e291]:
+            - text: البريد الإلكتروني *
+            - textbox "البريد الإلكتروني" [ref=e292]:
+              - /placeholder: بريدك الإلكتروني
+          - group "شنو نوع الاشتراك اللي يناسبك؟" [ref=e293]:
+            - generic [ref=e294]: شنو نوع الاشتراك اللي يناسبك؟ *
+            - generic [ref=e295]:
+              - generic [ref=e296] [cursor=pointer]:
+                - radio "الورشة كاملة — ١٢٥٬٠٠٠ دينار دفع كامل قبل بدء الورشة." [ref=e297]
+                - generic [ref=e298]:
+                  - strong [ref=e299]: الورشة كاملة — ١٢٥٬٠٠٠ دينار
+                  - generic [ref=e300]: دفع كامل قبل بدء الورشة.
+              - generic [ref=e301] [cursor=pointer]:
+                - radio "الورشة كاملة — على دفعتين ٧٥٬٠٠٠ دينار للأيام الثلاثة الأولى، و٥٠٬٠٠٠ قبل اليوم الرابع." [ref=e302]
+                - generic [ref=e303]:
+                  - strong [ref=e304]: الورشة كاملة — على دفعتين
+                  - generic [ref=e305]: ٧٥٬٠٠٠ دينار للأيام الثلاثة الأولى، و٥٠٬٠٠٠ قبل اليوم الرابع.
+              - generic [ref=e306] [cursor=pointer]:
+                - radio "يوم واحد — ٢٥٬٠٠٠ دينار ٢٥٬٠٠٠ دينار عن يوم واحد من أيام الورشة." [ref=e307]
+                - generic [ref=e308]:
+                  - strong [ref=e309]: يوم واحد — ٢٥٬٠٠٠ دينار
+                  - generic [ref=e310]: ٢٥٬٠٠٠ دينار عن يوم واحد من أيام الورشة.
+          - generic [ref=e311]: حتى نعرف شلون نساعدك
+          - generic [ref=e314]:
+            - text: شنو نوع المحتوى أو الفيديوهات اللي تريد تتعلمها؟ *
+            - textbox "شنو نوع المحتوى أو الفيديوهات اللي تريد تتعلمها؟" [ref=e315]:
+              - /placeholder: "مثال: محتوى لمشروعي، فيديوهات تعليمية..."
+          - generic [ref=e316]:
+            - text: هل سبق لك صورت أو منتجت فيديو؟ *
+            - textbox "هل سبق لك صورت أو منتجت فيديو؟" [ref=e317]:
+              - /placeholder: احچيلنا باختصار عن تجربتك...
+          - generic [ref=e318]:
+            - text: شنو هدفك من المشاركة؟ *
+            - textbox "شنو هدفك من المشاركة؟" [ref=e319]:
+              - /placeholder: شنو تحب تعرف أو تسوي بنهاية الورشة؟
+          - generic [ref=e320]:
+            - text: عندك سؤال أو ملاحظة؟ *
+            - textbox "عندك سؤال أو ملاحظة؟" [ref=e321]:
+              - /placeholder: اكتب أي سؤال تحب نجاوبك عليه...
+          - button "أرسل طلب الاهتمام" [ref=e322] [cursor=pointer]
+          - paragraph [ref=e325]: نستخدم بياناتك للتواصل وياك بخصوص الورشة وترتيب التسجيل.
+      - generic [ref=e326]:
+        - generic [ref=e327]:
+          - generic [ref=e328]:
+            - generic [ref=e329]: ٠٧
+            - text: قبل ما تسجل
+          - heading "أسئلة تتكرر." [level=2] [ref=e330]
+        - generic [ref=e331]:
+          - group [ref=e332]:
+            - generic "هل أحتاج خبرة سابقة؟" [ref=e333] [cursor=pointer]
+          - group [ref=e336]:
+            - generic "هل جهاز iPhone ضروري؟" [ref=e337] [cursor=pointer]
+          - group [ref=e340]:
+            - generic "كم تكلفة الورشة؟ وهل أكدر أقسّط؟" [ref=e341] [cursor=pointer]
+          - group [ref=e344]:
+            - generic "وين ومتى تصير الورشة؟" [ref=e345] [cursor=pointer]
+          - group [ref=e348]:
+            - generic "هل تضمن الورشة انتشار الفيديو؟" [ref=e349] [cursor=pointer]
+    - contentinfo [ref=e352]:
+      - link "ورشة سلس" [ref=e353] [cursor=pointer]:
+        - /url: "#home"
+      - generic [ref=e354]: ورشة صناعة الفيديو والمحتوى الرقمي.
+      - generic "حسابات ورشة سلس" [ref=e355]:
+        - link "حساب ورشة سلس على إنستغرام" [ref=e356] [cursor=pointer]:
+          - /url: https://www.instagram.com/sls___brand
+          - generic [ref=e360]: إنستغرام
+        - link "تواصل مع ورشة سلس عبر واتساب" [ref=e361] [cursor=pointer]:
+          - /url: https://wa.me/9647757660888
+          - generic [ref=e364]: واتساب
+      - link "العودة للأعلى" [ref=e365] [cursor=pointer]:
+        - /url: "#home"
+  - region "Notifications (F8)":
+    - list
