@@ -85,7 +85,7 @@ function Home() {
           <a href="#البرنامج">برنامج الأيام</a>
           <a href="#الأجور">الأجور</a>
         </nav>
-        <a className="header-cta" href="#التسجيل">سجّل اهتمامك <ArrowLeft size={16} /></a>
+        <a className="header-cta" href="#register">سجّل اهتمامك <ArrowLeft size={16} /></a>
       </header>
 
       <main>
@@ -101,7 +101,7 @@ function Home() {
               <span>١٢٥٬٠٠٠ د.ع للورشة كاملة</span>
             </div>
             <div className="hero-actions">
-              <a className="button button-light" href="#التسجيل">قدّم طلب اهتمامك <ArrowLeft size={18} /></a>
+              <a className="button button-light" href="#register">قدّم طلب اهتمامك <ArrowLeft size={18} /></a>
               <a className="text-link" href="https://wa.me/9647757660888" target="_blank" rel="noopener noreferrer">اسألنا على واتساب <MessageCircle size={16} /></a>
             </div>
             <div className="hero-note"><span className="tiny-rule" /> التسجيل يبدأ بطلب اهتمام؛ نرسل التفاصيل قبل التأكيد.</div>
@@ -213,7 +213,7 @@ function Home() {
               <article><span>الخيار الأول</span><h3>دفع كامل</h3><p>١٢٥٬٠٠٠ دينار قبل بدء الورشة.</p></article>
               <article><span>الخيار الثاني</span><h3>على دفعتين</h3><p>٧٥٬٠٠٠ دينار للأيام الثلاثة الأولى، و٥٠٬٠٠٠ دينار قبل اليوم الرابع.</p></article>
             </div>
-            <a className="button price-cta" href="#التسجيل">سجّل اهتمامك <ArrowLeft size={17} /></a>
+            <a className="button price-cta" href="#register">سجّل اهتمامك <ArrowLeft size={17} /></a>
           </div>
         </section>
 
@@ -247,7 +247,7 @@ function Home() {
           </div>
         </section>
 
-        <section className="registration-section" id="التسجيل">
+        <section className="registration-section" id="register">
           <div className="registration-intro">
             <div className="section-kicker light-kicker"><span>٠٨</span> ابدأ بطلب اهتمام</div>
             <h2>خلّنا نعرف<br />شنو تريد تتعلم.</h2>
